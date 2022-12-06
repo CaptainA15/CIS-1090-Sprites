@@ -18,24 +18,24 @@ function distance(a, b) {
 //So you can set everything up.
 function setup(sprites) {
     //Set up the sprites
-    sprites[0].image = "🧍‍♂️";
+    sprites[0].image = "🧍🏻‍♂️";
     sprites[0].x = 15;
     sprites[0].y = 0;
 
-    sprites[1].image = "🤠";
+    sprites[1].image = "";
     sprites[1].x = 3;
     sprites[1].y = 35;
 
-    sprites[2].image = ")";
+    sprites[2].image = "🔫";
     sprites[2].x = 40;
     sprites[2].y = 20;
     sprites[2].color = "#8E562E";
 
-    sprites[3].image = "➵";
+    sprites[3].image = "";
     sprites[3].x = -100;
     sprites[3].y = -100;
 
-    sprites[4].image = "🦌";
+    sprites[4].image = "👻";
     sprites[4].x = 500;
     sprites[4].y = 300;
 
@@ -68,7 +68,7 @@ function frame(sprites, t, dt, up, down, left, right, space) {
 
     const arrow = sprites[3];
 
-    const buck = sprites[4];
+    const ghost = sprites[4];
 
     //Move Hunter
     if (up) {
@@ -134,25 +134,25 @@ function frame(sprites, t, dt, up, down, left, right, space) {
         //release the arrow
     }
 
-    if (buck.image == "🥩") {
+    if (ghost.image == "🥩") {
         //If the buck is meat...
-        if (distance(hunter, buck) < 50) {
+        if (distance(hunter, ghost) < 50) {
             //When the hunter touches the meat, give points..
             score++;
             //And make it back into a deer
-            buck.image = "🦌";
-            buck.x = 780 * Math.random();
-            buck.y = 470 * Math.random();
+            ghost.image = "🦌";
+            ghost.x = 780 * Math.random();
+            ghost.y = 470 * Math.random();
         }
     } else {
         //It's still a deer, so check to see if arrow
         //hit it.
         //If space is not held, and the arrow is moving,
         //and the distaice is small
-        if (!space && vArrow && distance(arrow, buck) < 20) {
+        if (!space && vArrow && distance(arrow, ghost) < 20) {
             score++; 
             vArrow = 0;
-            buck.image = "🥩";
+            ghost.image = "🥩";
         }
     }
 
@@ -160,9 +160,9 @@ function frame(sprites, t, dt, up, down, left, right, space) {
 };
 
 export default {
-    name: "Buck Stalker",
-    instructions: "<b>Shoot 🦌, eat 🥩!</b><br>Arrow keys to move.<br>Space to shoot an arrow.",
-    icon: "🏹",
+    name: "Ghost Buster",
+    instructions: "<b>Shoot 👻, eat 🥩!</b><br>Arrow keys to move.<br>Space to shoot an arrow.",
+    icon: "👻",
     background: {
         "background-color": "green"
     },
