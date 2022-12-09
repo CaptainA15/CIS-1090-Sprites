@@ -161,7 +161,7 @@ function frame(sprites, t, dt, up, down, left, right, space) {
 
 export default {
     name: "Ghost Buster",
-    instructions: "<b>Shoot 👻, collect 💰!</b><br>Arrow keys to move.<br>Space to shoot an arrow.",
+    instructions: "<b>Shoot 👻, collect 💰!</b><br>Arrow keys to move.<br>Space to shoot a blast.",
     icon: "👻",
     background: {
         "background-color": "purple"
