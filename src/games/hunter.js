@@ -22,13 +22,13 @@ function setup(sprites) {
     sprites[0].x = 15;
     sprites[0].y = 0;
 
-    sprites[1].image = "👹";
-    sprites[1].x = 300;
-    sprites[1].y = 100;
+    sprites[1].image = "";
+    sprites[1].x = 500;
+    sprites[1].y = 300;
 
-    sprites[2].image = "🧟";
-    sprites[2].x = 500;
-    sprites[2].y = 300;
+    sprites[2].image = "";
+    sprites[2].x = 300;
+    sprites[2].y = 100;
     
     sprites[3].image = "💥";
     sprites[3].x = 500;
@@ -60,12 +60,11 @@ function frame(sprites, t, dt, up, down, left, right, space) {
     //Keep references to the sprites in some variables with
     //better names:
 
-    //The hunter is made of three sprites
+    //The buster is made of one sprite
     const buster = sprites[0];
+
     const head = sprites[1];
     const gun = sprites[2];
-
-    
     const blast = sprites[3];
     const ghost = sprites[4];
 
@@ -157,6 +156,8 @@ function frame(sprites, t, dt, up, down, left, right, space) {
 
     return score;
 };
+
+
 
 export default {
     name: "Ghost Buster",
